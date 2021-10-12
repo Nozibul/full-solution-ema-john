@@ -1,0 +1,27 @@
+
+.input-area{
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    line-height: 40px;
+    
+}
+
+.input-area input {
+    width: 50%;
+}
+
+
+
+.shop-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3 ta vag hoa ter 1 ta vage thakbe order ta baki ta products */
+}
+
+.product-container{
+   border-right: 1px solid lightgrey;
+   margin-right: 8px;
+   margin-left: 100px;
+}
+
+
+
