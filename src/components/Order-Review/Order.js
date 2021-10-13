@@ -27,9 +27,10 @@ const Order = () => {
     //54-2 Create order placed and clear cart and stored data
     const history = useHistory()
     const handlOrder =()=>{
-        history.push("/place")
+        // history.push("/place")
+        history.push("/shipping")
         setCart([])// UI  er sob product gulo delete hoa jabe
-        clearCart() // localStorage thee sob delete hoa jabe
+        clearCart() // localStorage theke sob delete hoa jabe
     }
     return (
         <div>

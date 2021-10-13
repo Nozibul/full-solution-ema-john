@@ -1,8 +1,23 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+// import useFirebase from '../Hooks/firebase';
+import useAuth from '../Hooks/useAuth';
 import './login.css'
 
 const Login = () => {
+    const {signInGoogle} = useAuth();
+
+    const location = useLocation() // akhan theke abr onno jaigai pathate useLocation use korlam
+    const redirect_uri = location.state?.from || '/shop' ;
+    const history = useHistory() 
+
+    const handleGoogleLogIn = ()=>{
+        signInGoogle()
+        .then(result =>{
+          history.push(redirect_uri)
+        })
+    }
+
     return (
         <div className="login-form">
             <div>          
@@ -14,7 +29,7 @@ const Login = () => {
                 </form>
                 <p>New to ema-john ??? <NavLink to="/register">create account</NavLink> </p>
                 <div>--------- Or --------</div>
-                <button className="btn-regular">Google Sign In</button>
+                <button onClick={handleGoogleLogIn} className="btn-regular">Google Sign In</button>
             </div>
         </div>
     );
